@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Classes
 {
@@ -10,27 +6,30 @@ namespace Classes
     {
         static void Main(string[] args)
         {
+            Patient patient = new Patient("Иванов Иван Иванович", 57, 38.5f, "Лень матушка");
+
+            patient.ShowInfo();
         }
     }
 
-    class Player
+    class Patient
     {
         private string _name;
         private int _age;
-        private int _bodyTemperature;
+        private float _bodyTemperature;
         private string _diagnosis;
 
-        public Player(string name, int age, int weight, string diagnosis)
+        public Patient(string name, int age, float temperature, string diagnosis)
         {
             _name = name;
             _age = age;
-            _bodyTemperature = weight;
+            _bodyTemperature = temperature;
             _diagnosis = diagnosis;
         }
 
         public void ShowInfo()
         {
-            Console.WriteLine($"Пациент {_name}, возраст: {_age}, температура тела: {_bodyTemperature}. Диагноз {_diagnosis}");
+            Console.WriteLine($"Пациент {_name}, возраст: {_age} лет, температура тела: {_bodyTemperature}. Диагноз: {_diagnosis}");
         }
     }
 }
